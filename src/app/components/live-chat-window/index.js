@@ -66,7 +66,7 @@ class ChatWindow extends React.Component {
         return (
             <div className="chat-window">
                 <div className="chat-window__agent">
-                    <span><b>Nathan</b> Smith</span>
+                    <span><b>Firstname</b> Surname</span>
                 </div>
                 <button className="view-toggle">
                     <span className="view-toggle__line"></span>
