@@ -1,0 +1,41 @@
+.user-window {
+    &__field-group {
+        display: flex;
+        position: relative;
+        border-radius: 0 0 22px 22px;
+    }
+
+    &__msg-box {
+        border: none;
+        padding: 20px 70px 20px 40px;
+        border-radius: 0 0 22px 22px;
+        font-size: 16px;
+        flex-grow: 1;
+        height: 95px;
+
+        &:focus {
+            outline: none;
+        }
+    }
+    &__send-msg {
+        background: none;
+        border: none;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        width: 70px;
+    }
+    &__send-msg-text {
+        position: absolute;
+        height: 0;
+        width: 0;
+        clip: rect(0, 0, 0, 0);
+        overflow: hidden;
+    }
+    &__send-msg-icon {
+        width: 22px;
+        height: 22px;
+    }
+}
