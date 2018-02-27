@@ -1,5 +1,4 @@
 # live chat prototype
----
 A prototype of a live chat component built using ReactJs json-server as a fake API.
 
 *work in progress*

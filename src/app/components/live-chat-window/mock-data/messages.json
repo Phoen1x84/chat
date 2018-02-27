@@ -1,3 +1,16 @@
 {
-  "messages": []
+  "messages": [
+    {
+      "from": {
+        "nickname": "Test user",
+        "participantId": 1,
+        "type": "Agent"
+      },
+      "index": 4,
+      "text": "Hi I'm Droplet, your friendly helper bot, how can I help you today?",
+      "type": "Message",
+      "utcTime": 1509009718000,
+      "id": 1
+    }
+  ]
 }

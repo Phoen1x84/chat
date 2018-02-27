@@ -27,7 +27,6 @@ class ChatWindow extends React.Component {
 
     postMessage(e) {
         e.preventDefault();
-        debugger;
         fetch('http://localhost:3000/messages',
             {
                 method: 'POST',
@@ -46,18 +45,12 @@ class ChatWindow extends React.Component {
                 })
             }).then(response => response.json())
             .then((data)=> {
-                debugger;
                 this.receiveMessages(data)
             })
-            .catch((error) => {
-                debugger;
-                console.log(error)
-            });
+            .catch((error) => console.log(error));
     };
     receiveMessages(data) {
-        debugger;
         this.setState((prevState) => {
-            debugger
             return ({messages: prevState.messages.concat(data)})
         })
     };
@@ -77,7 +70,7 @@ class ChatWindow extends React.Component {
                 </div>
                 <form className="user-window" onSubmit={this.postMessage}>
                     <div className="user-window__field-group">
-                        <input type="text" placeholder="Type here" ref={(ref) => { this.text = ref }} className="user-window__msg-box" />
+                        <textarea placeholder="Type here" ref={(ref) => { this.text = ref }} className="user-window__msg-box" />
                         <button type="submit" className="user-window__send-msg">
                             <span className="user-window__send-msg-text">send message</span>
                             <svg className="user-window__send-msg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">

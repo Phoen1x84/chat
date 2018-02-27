@@ -33,7 +33,10 @@ module.exports = {
         }
       }, {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'sass-loader'],
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader', 
+          use: ['css-loader', 'sass-loader']
+        }),
       },
       {
         test: /\.json$/,
@@ -43,6 +46,7 @@ module.exports = {
   },
 
   plugins: [
-    new CleanWebpackPlugin(['dist'], { root: path.resolve(__dirname, '..') })
+    new CleanWebpackPlugin(['dist'], { root: path.resolve(__dirname, '..') }),
+    new ExtractTextPlugin('style.css')
   ]
 };
