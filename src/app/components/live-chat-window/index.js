@@ -49,12 +49,13 @@ class ChatWindow extends React.Component {
             })
             .catch((error) => console.log(error));
     };
+
     receiveMessages(data) {
         this.setState((prevState) => {
             return ({messages: prevState.messages.concat(data)})
         })
     };
-
+    
     render() {                
         if(this.props.chatOpen) {
             return (
@@ -66,14 +67,16 @@ class ChatWindow extends React.Component {
                         <span className="view-toggle__line"></span>
                     </button>
                     <div className="chat-window__viewer">
-                        <ChatViewer chatFeed={this.state} />
+                        <ChatViewer chatFeed={this.state} />                        
                         <Loader />
                     </div>
                     <form className="user-window" onSubmit={this.postMessage}>
                         <div className="user-window__field-group">
-                            <textarea placeholder="Type here" ref={(ref) => { this.text = ref }} className="user-window__msg-box" />
+                            <input type="text" placeholder="Type here" ref={(ref) => { this.text = ref }} className="user-window__msg-box" />
                             <button type="submit" className="user-window__send-msg">
-                                <span className="user-window__send-msg-text">send message</span>
+                                <span className="user-window__send-msg-text">
+                                    send message
+                                </span>
                                 <svg className="user-window__send-msg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
                                     <path fill="#000222" d="M5.375 56v-18.625l40-5.375-40-5.375v-18.625l56 24z"></path>
                                 </svg>

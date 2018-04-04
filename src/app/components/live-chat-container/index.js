@@ -24,7 +24,7 @@ class LiveChatApp extends React.Component {
         return (
             <div className="live-chat-container">                
                 <ChatWindow chatOpen={this.state.isOpen} />
-                <Launch chatOpen={this.state.isOpen} buttonText={Launch} toggleChatMethod={this.handleClick} />
+                <Launch chatOpen={this.state.isOpen} buttonText="Launch" toggleChatMethod={this.handleClick} />
             </div>
         )
     }
