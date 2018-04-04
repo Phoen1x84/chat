@@ -1,17 +1,17 @@
 import React from 'react';
 
-const PreEngagementForm = () => {
+const PreEngagementForm = (props) => {
     return(
         <div className="">
             <form action="" method="">
                 <div className="">
-                    <label for="EngagementFirstName">
+                    <label for="EngagementFirstName">                        
                         First Name:
                     </label>
                     <input id="EngagementFirstName" type="text" value="" />
                 </div>
                 <div className="">
-                    <label for="EngagementLastName">
+                    <label for="EngagementLastName">                        
                         Last Name:
                     </label>
                     <input id="EngagementLastName" type="text" value="" />

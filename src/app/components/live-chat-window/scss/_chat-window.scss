@@ -11,12 +11,16 @@ body {
 $green: #7AB136;
 // above code should be global 
 .chat-window {
+    animation: grow-window 0.5s ease-in-out forwards;
+    transform-origin: bottom right;
     background: #fff;
     border-radius: 22px;
     flex-direction: column;
     max-width: 360px;
     position: relative;
     margin: 0 0 24px;
+    overflow: hidden;
+    transform-origin: bottom right;
 
     &__agent {
         align-items: center;
@@ -33,10 +37,20 @@ $green: #7AB136;
         width: 100%;
         height: 400px;
         padding: 0 20px;        
-        overflow: auto;        
+        overflow: auto;   
+        position: relative;     
     }
     &__user-input {
         display: flex;
         border-radius: 0 0 22px 22px;
+    }
+}
+
+@keyframes grow-window {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
     }
 }

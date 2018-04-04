@@ -1,12 +1,14 @@
 import React from "react";
 import './scss/_launch.scss';
 
-const Launch = () => {
-    return(
+const Launch = (props) => {     
+    return (        
         <div className="launch">
-            <button className="launch__btn">
-                <span className="launch__text">Launch</span>
-                <i className="launch__icon">X</i>
+            <button className={props.chatOpen ? "launch__btn launch__btn--open" : "launch__btn"} onClick={props.toggleChatMethod}>
+                <i className="launch__icon"></i>
+                <span className="launch__text">
+                    {props.buttonText}
+                </span>
             </button>
         </div>
     )

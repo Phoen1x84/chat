@@ -11,6 +11,18 @@
       "type": "Message",
       "utcTime": 1509009718000,
       "id": 1
+    },
+    {
+      "from": {
+        "nickname": "Test user",
+        "participantId": 1,
+        "type": "Client"
+      },
+      "index": 4,
+      "text": "hi",
+      "type": "Message",
+      "utcTime": 1509009718000,
+      "id": 2
     }
   ]
 }

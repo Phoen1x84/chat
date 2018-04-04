@@ -55,32 +55,36 @@ class ChatWindow extends React.Component {
         })
     };
 
-    render() {
-        return (
-            <div className="chat-window">
-                <div className="chat-window__agent">
-                    <span><b>Firstname</b> Surname</span>
-                </div>
-                <button className="view-toggle">
-                    <span className="view-toggle__line"></span>
-                </button>
-                <div className="chat-window__viewer">
-                    <ChatViewer chatFeed={this.state} />
-                    <Loader />
-                </div>
-                <form className="user-window" onSubmit={this.postMessage}>
-                    <div className="user-window__field-group">
-                        <textarea placeholder="Type here" ref={(ref) => { this.text = ref }} className="user-window__msg-box" />
-                        <button type="submit" className="user-window__send-msg">
-                            <span className="user-window__send-msg-text">send message</span>
-                            <svg className="user-window__send-msg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-                                <path fill="#000222" d="M5.375 56v-18.625l40-5.375-40-5.375v-18.625l56 24z"></path>
-                            </svg>
-                        </button>
+    render() {                
+        if(this.props.chatOpen) {
+            return (
+                <div className={this.props.chatOpen ? "chat-window" : "chat-window chat-window--open"}>
+                    <div className="chat-window__agent">
+                        <span><b>Firstname</b> Surname</span>
                     </div>
-                </form>
-            </div>
-        )
+                    <button className="view-toggle">
+                        <span className="view-toggle__line"></span>
+                    </button>
+                    <div className="chat-window__viewer">
+                        <ChatViewer chatFeed={this.state} />
+                        <Loader />
+                    </div>
+                    <form className="user-window" onSubmit={this.postMessage}>
+                        <div className="user-window__field-group">
+                            <textarea placeholder="Type here" ref={(ref) => { this.text = ref }} className="user-window__msg-box" />
+                            <button type="submit" className="user-window__send-msg">
+                                <span className="user-window__send-msg-text">send message</span>
+                                <svg className="user-window__send-msg-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+                                    <path fill="#000222" d="M5.375 56v-18.625l40-5.375-40-5.375v-18.625l56 24z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            )
+        } else {
+            return false;
+        }        
     }
 }
 
