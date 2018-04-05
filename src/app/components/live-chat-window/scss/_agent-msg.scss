@@ -15,11 +15,11 @@ $green: #7AB136;
 
     &__text {
         background: $green;
-        border-radius: 5px 12px 12px 12px; 
+        border-radius: 5px 16px 16px 16px; 
         color: #fff;
         margin: 0 0 5px auto;
         width: calc(100% - 58px);
-        padding: 25px;        
+        padding: 36px 30px;        
         transform: scale(0) translateY(30px);
         transform-origin: top left;
         animation: message-fly-in 0.5s forwards cubic-bezier(0.455, 0.030, 0.515, 0.955);

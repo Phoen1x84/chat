@@ -40,8 +40,8 @@ class ChatWindow extends React.Component {
                     "index": 4,
                     "text": this.text.value,
                     "type": "Message",
-                    "utcTime": 1509009718000,
-                    "id": new Date(Date.UTC())
+                    "utcTime": Date.now(),
+                    "id": Date.now()
                 })
             }).then(response => response.json())
             .then((data)=> {

@@ -10,10 +10,10 @@ class LiveChatApp extends React.Component {
         this.state = {
             isOpen: false
         }
-        this.handleClick = this.handleClick.bind(this);
+        this.handleToggleWindowClick = this.handleToggleWindowClick.bind(this);
     }
 
-    handleClick(e) {
+    handleToggleWindowClick(e) {
         e.preventDefault();
         this.setState({
             isOpen: !this.state.isOpen
@@ -23,8 +23,8 @@ class LiveChatApp extends React.Component {
     render() {        
         return (
             <div className="live-chat-container">                
-                <ChatWindow chatOpen={this.state.isOpen} />
-                <Launch chatOpen={this.state.isOpen} buttonText="Launch" toggleChatMethod={this.handleClick} />
+                <ChatWindow chatOpen={this.state.isOpen} />                
+                <Launch chatOpen={this.state.isOpen} buttonText="Launch" toggleChatMethod={this.handleToggleWindowClick} />
             </div>
         )
     }

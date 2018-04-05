@@ -11,16 +11,21 @@ const ChatViewer = (props) => {
         }
     };
 
+    const convertUTCTimeToTimeString = (number) => {
+        const Epoc = new Date(number);        
+        return `${Epoc.getHours()}:${Epoc.getMinutes()}`;
+    };
+
     const messages = feed.map((message) => {
         const prefix = messageType(message);
-        const timeStamp = new Date(Date.UTC(message.utcTime));
+        const timeStamp = convertUTCTimeToTimeString(message.utcTime);
         return <div className={`${prefix}`} key={message.index}>
             <span className={`${prefix}__icon`}></span>
             <div className={`${prefix}__text`}>
                 <p>{message.text}</p>
             </div>
             <span className={`${prefix}__time-stamp`}>
-                {message.utcTime}
+                {`${timeStamp}`}
             </span>
         </div>;
     });

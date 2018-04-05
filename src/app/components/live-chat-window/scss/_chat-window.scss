@@ -16,7 +16,7 @@ $green: #7AB136;
     background: #fff;
     border-radius: 22px;
     flex-direction: column;
-    max-width: 360px;
+    max-width: 400px;
     position: relative;
     margin: 0 0 24px;
     overflow: hidden;
@@ -28,9 +28,9 @@ $green: #7AB136;
         border-radius: 22px 22px 0 0;
         color: #fff;
         display: flex;
-        font-size: 18px;
+        font-size: 16px;
         padding: 20px 40px;
-        height: 95px;
+        height: 80px;
     }
 
     &__viewer {        
