@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ChatWindow from './../../components/live-chat-window';
 import Launch from './../../components/launch/index';
+import Queue from './../../components/queue/index';
 import './scss/_live-chat-container.scss';
 
 class LiveChatApp extends React.Component {    
@@ -24,6 +25,7 @@ class LiveChatApp extends React.Component {
         return (
             <div className="live-chat-container">                
                 <ChatWindow chatOpen={this.state.isOpen} />                
+                {/* <Queue /> */}
                 <Launch chatOpen={this.state.isOpen} buttonText="Launch" toggleChatMethod={this.handleToggleWindowClick} />
             </div>
         )

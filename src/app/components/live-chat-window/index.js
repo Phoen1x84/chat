@@ -1,6 +1,8 @@
 import React from 'react';
 import Loader from './../loader/index.js';
 import ChatViewer from './../chat-viewer/index.js';
+import PreReqForm from './../pre-engagement/index.js';
+
 import './scss/_agent-msg.scss';
 import './scss/_chat-window.scss';
 import './scss/_user-msg.scss';
@@ -19,18 +21,18 @@ class ChatWindow extends React.Component {
     };
 
     componentDidMount() {
-        fetch('http://localhost:3000/messages')
-            .then((response) => response.json())
-            .then(this.receiveMessages)
-            .catch((error) => console.log(error));
+        // fetch('http://localhost:3000/messages')
+        //     .then((response) => response.json())
+        //     .then(this.receiveMessages)
+        //     .catch((error) => console.log(error));
     };
 
     postMessage(e) {
         e.preventDefault();
-        fetch('http://localhost:3000/messages',
+        fetch('http://172.18.42.20:6505/genesys/2/chat/retail-service',
             {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: JSON.stringify({
                     "from": {
                         "nickname": "Test user",
@@ -60,7 +62,10 @@ class ChatWindow extends React.Component {
         if(this.props.chatOpen) {
             return (
                 <div className={this.props.chatOpen ? "chat-window" : "chat-window chat-window--open"}>
-                    <div className="chat-window__agent">
+
+                    <PreReqForm />
+
+                    {/* <div className="chat-window__agent">
                         <span><b>Firstname</b> Surname</span>
                     </div>
                     <button className="view-toggle">
@@ -69,8 +74,8 @@ class ChatWindow extends React.Component {
                     <div className="chat-window__viewer">
                         <ChatViewer chatFeed={this.state} />                        
                         <Loader />
-                    </div>
-                    <form className="user-window" onSubmit={this.postMessage}>
+                    </div> */}
+                    {/* <form className="user-window" onSubmit={this.postMessage}>
                         <div className="user-window__field-group">
                             <input type="text" placeholder="Type here" ref={(ref) => { this.text = ref }} className="user-window__msg-box" />
                             <button type="submit" className="user-window__send-msg">
@@ -82,7 +87,7 @@ class ChatWindow extends React.Component {
                                 </svg>
                             </button>
                         </div>
-                    </form>
+                    </form> */}
                 </div>
             )
         } else {

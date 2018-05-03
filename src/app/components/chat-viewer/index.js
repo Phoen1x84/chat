@@ -3,13 +3,7 @@ import React from 'react';
 const ChatViewer = (props) => {
     const feed = props.chatFeed.messages;
 
-    const messageType = (message) => {
-        if (message.from.type === 'Agent') {
-            return 'agent-msg';
-        } else {
-            return 'user-msg';
-        }
-    };
+    const messageType = (message) => message.from.type === 'Agent' ? 'agent-msg' : 'user-msg';
 
     const convertUTCTimeToTimeString = (number) => {
         const Epoc = new Date(number);        
@@ -33,7 +27,9 @@ const ChatViewer = (props) => {
     return (
         <div className="">
             {messages}
-            {/* <div className="agent-msg">
+            {/* 
+            Example markup
+            <div className="agent-msg">
                 <span className="agent-msg__icon">
                 </span>
                 <div className="agent-msg__text">
